@@ -1,0 +1,121 @@
+{
+  "error": {
+    "prefix": "error",
+    "body": [
+      "console.error(${1:Error Message})"
+    ],
+    "description": "Write an error debug message."
+  },
+  "log": {
+    "prefix": ["log", "console.l"],
+    "body": [
+      "console.log(${1:Log Message})"
+    ],
+    "description": "Write an log debug message."
+  },
+  "logVar": {
+    "prefix": ["logVar", "console.l"],
+    "body": [
+      "console.log('${1:Var}: ', $1)"
+    ],
+    "description": "Write a variable log debug message."
+  },
+  "setTimeout": {
+    "prefix": ["timeout", "setTimeout"],
+    "body": [
+      "setTimeout(function(){",
+      "\t${2:}",
+      "}, ${1:1000})"
+    ],
+    "description": "Set timeout function"
+  },
+  "setInterval": {
+    "prefix": ["interval", "setInterval"],
+    "body": [
+      "setInterval(function(){",
+      "\t${2:}",
+      "}, ${1:1000})"
+    ],
+    "description": "Set interval function"
+  },
+  "fetch_json": {
+    "prefix": ["fetch", "fetch_json"],
+    "body": [
+      "fetch(${1:url}, ${2:fetchOptions})",
+      "\t.then(function(response){",
+      "\t\treturn response.json();",
+      "\t}).then(function(json){",
+      "\t\t${3:// TODO implement promise.}",
+      "\t})"
+    ],
+    "description": "Send a request and convert to JSON."
+  },
+  "click": {
+    "prefix": ["addEvent", "click"],
+    "body": [
+      "addEventListener('click', (event) => {",
+      "",
+      "})"
+    ],
+    "description": "Create an event listener for click event."
+  },
+  "hover": {
+    "prefix": ["addEvent", "hover"],
+    "body": [
+      "addEventListener('hover', (event) => {",
+      "",
+      "})"
+    ],
+    "description": "Create an event listener for hover event."
+  },
+  "focus": {
+    "prefix": ["addEvent", "focus"],
+    "body": [
+      "addEventListener('focus', (event) => {",
+      "",
+      "})"
+    ],
+    "description": "Create an event listener for focus event."
+  },
+  "blur": {
+    "prefix": "blur",
+    "body": [
+      "addEventListener('blur', (event) => {",
+      "",
+      "})"
+    ],
+    "description": "Create an event listener for blur event."
+  },
+  "useReducer": {
+    "prefix": ["useR", "useReducer"],
+    "body": [
+      "const reducer = function(state, action) {",
+      "\tswitch (action.type) {",
+      "\t\tdefault:",
+      "\t\t\treturn state;",
+      "\t}",
+      "}",
+      "",
+      "const initialState = {}",
+      "",
+      "const [state, dispatch ] = useReducer(reducer, initialState)"
+    ],
+    "description": "Use reducer hook."
+  },
+  "useState": {
+    "prefix": ["useS", "useState"],
+    "body": [
+      "const { ${1:varName}, set${2:upperVarName} } = useState()"
+    ],
+    "description": "Use state hook."
+  },
+  "useEffect": {
+    "prefix": ["useE", "useEffect"],
+    "body": [
+      "useEffect(() => {",
+      "",
+      "}, ${2:[]})"
+    ],
+    "description": "Use effect hook."
+  }
+}
